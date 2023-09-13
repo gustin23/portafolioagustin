@@ -7,7 +7,7 @@ import { EarthCanvas } from "./canvas";
 import { SectionWrapper } from "../hoc"; 
 import { slideIn } from "../utils/motion";
 
-const Contact = () => {
+const Contactemailjs = () => {
   const formRef = useRef();
   const [form, setForm] = useState({
     name: "",
@@ -47,7 +47,7 @@ const Contact = () => {
       .then(
         () => {
           setLoading(false);
-          alert("Thank you. I will get back to you as soon as possible.");
+          alert("Muchas gracias! Se ha enviado tu mensaje a mi casilla de mail correctamente");
   
           setForm({
             name: "",
@@ -59,7 +59,7 @@ const Contact = () => {
           setLoading(false);
           console.error(error);
   
-          alert("Ahh, something went wrong. Please try again.");
+          alert("Ops! algo salio mal. Por favor prueba de nuevo.");
         }
       );
   };
@@ -140,4 +140,4 @@ const Contact = () => {
   )
 }
 
-export default SectionWrapper (Contact, "contact")
+export default SectionWrapper (Contactemailjs, "contact")
