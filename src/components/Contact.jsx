@@ -47,7 +47,7 @@ const Contact = () => {
       .then(
         () => {
           setLoading(false);
-          alert("Thank you. I will get back to you as soon as possible.");
+          alert("Muchas gracias! Se ha enviado tu mensaje a mi casilla de mail correctamente");
   
           setForm({
             name: "",
@@ -59,7 +59,7 @@ const Contact = () => {
           setLoading(false);
           console.error(error);
   
-          alert("Ahh, something went wrong. Please try again.");
+          alert("Ops! algo salio mal. Por favor prueba de nuevo.");
         }
       );
   };
@@ -122,7 +122,7 @@ const Contact = () => {
             className="bg-tertiary py-3 px-8 outline-none w-fit 
             text-white font-bold shadow-md shadow-primary rounded-xl"
           >
-            {loading ? "Cargando..." : "Enviado"}
+            {loading ? "Cargando..." : "Enviar"}
           </button>
         </form>
 
