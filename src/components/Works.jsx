@@ -2,7 +2,7 @@ import {Tilt} from 'react-tilt';
 import {motion} from 'framer-motion';
 
 import {styles} from '../styles';
-import {git, github} from '../assets';
+import {github} from '../assets';
 import {SectionWrapper} from '../hoc'
 import { projects } from '../constants'; //CAMBIAR ESTO POR MIS PROYECTOS
 import { fadeIn, textVariant } from '../utils/motion';
