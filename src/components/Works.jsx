@@ -6,12 +6,14 @@ import {github} from '../assets';
 import {SectionWrapper} from '../hoc'
 import { projects } from '../constants'; //CAMBIAR ESTO POR MIS PROYECTOS
 import { fadeIn, textVariant } from '../utils/motion';
+import { lazy } from 'react';
 
 const ProjectCard = ({index, name, description, tags, image, source_code_link}) =>{
   return(
     <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)}>
       <Tilt
         options ={{
+          loading: lazy,
           max: 45,
           scale: 1,
           speed: 450
@@ -20,6 +22,7 @@ const ProjectCard = ({index, name, description, tags, image, source_code_link}) 
       >
         <div className='relative w-full h-[230px]'>
           <img
+            loading='lazy'
             src={image}
             alt={name} 
             className='w-full h-full object-cover rounded-2xl'
@@ -32,6 +35,7 @@ const ProjectCard = ({index, name, description, tags, image, source_code_link}) 
                 className='black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer'
               >
                 <img
+                  loading='lazy'
                   src={github}
                   alt="github"
                   className='object-contain'
@@ -71,6 +75,7 @@ const Works = () => {
 
       <div className='w-full flex'>
         <motion.p
+          loading="lazy"
           variants={fadeIn("", "", 0.1, 1)}
           className='mt-3 text-secondary text-[17px] max-w-3xl leading-[30px]'
         >
@@ -82,6 +87,7 @@ const Works = () => {
       <div className='mt-20 flex flex-wrap gap-7'>
         {projects.map((projects, index) =>
           <ProjectCard
+          loading="lazy"
           key={`project-${index}`}
           index={index}
           {...projects}
